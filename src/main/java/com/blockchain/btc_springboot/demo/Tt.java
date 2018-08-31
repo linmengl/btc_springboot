@@ -15,6 +15,8 @@ import java.util.List;
  */
 public class Tt {
 
+
+
 	//活动开始时间 7月1号
 	//public static Long startTime = 1530374400000L;
 	public static Long startTime = 1532448000000L;//25号
