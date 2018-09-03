@@ -1,5 +1,8 @@
 package com.blockchain.btc_springboot;
 
+/**
+ * 常量
+ */
 public interface Constants {
 
     // zero fill with 4 chars...
