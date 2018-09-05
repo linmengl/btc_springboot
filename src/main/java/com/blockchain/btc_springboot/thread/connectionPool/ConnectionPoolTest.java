@@ -6,39 +6,43 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ConnectionPoolTest {
 	static ConnectionPool pool = new ConnectionPool(10);
-	// 保证所有ConnectionRunner能够同时开始
+	/**
+	 * 保证所有ConnectionRunner能够同时开始
+	 */
 	static CountDownLatch start = new CountDownLatch(1);
-	// main线程将会等待所有ConnectionRunner结束后才能继续执行
+	/**
+	 * main线程将会等待所有ConnectionRunner结束后才能继续执行
+	 */
 	static CountDownLatch end;
 
 	public static void main(String[] args) throws Exception {
 		// 线程数量，可以修改线程数量进行观察
-		int threadCount = 10;
+		int threadCount = 20;
 		end = new CountDownLatch(threadCount);
 		int count = 20;
-		AtomicInteger got = new AtomicInteger();
-		AtomicInteger notGot = new AtomicInteger();
+		AtomicInteger get = new AtomicInteger();
+		AtomicInteger notGet = new AtomicInteger();
 		for (int i = 0; i < threadCount; i++) {
-			Thread thread = new Thread(new ConnetionRunner(count, got, notGot),
+			Thread thread = new Thread(new ConnetionRunner(count, get, notGet),
 					"ConnectionRunnerThread");
 			thread.start();
 		}
 		start.countDown();
 		end.await();
 		System.out.println("total invoke: " + (threadCount * count));
-		System.out.println("got connection: " + got);
-		System.out.println("not got connection " + notGot);
+		System.out.println("get connection: " + get);
+		System.out.println("not get connection " + notGet);
 	}
 
 	static class ConnetionRunner implements Runnable {
 		int count;
-		AtomicInteger got;
-		AtomicInteger notGot;
+		AtomicInteger get;
+		AtomicInteger notGet;
 
-		public ConnetionRunner(int count, AtomicInteger got, AtomicInteger notGot) {
+		public ConnetionRunner(int count, AtomicInteger get, AtomicInteger notGet) {
 			this.count = count;
-			this.got = got;
-			this.notGot = notGot;
+			this.get = get;
+			this.notGet = notGet;
 		}
 
 		public void run() {
@@ -57,10 +61,10 @@ public class ConnectionPoolTest {
 							connection.commit();
 						} finally {
 							pool.releaseConnection(connection);//释放链接
-							got.incrementAndGet();
+							get.incrementAndGet();
 						}
 					} else {
-						notGot.incrementAndGet();
+						notGet.incrementAndGet();
 					}
 				} catch (Exception ex) {
 				} finally {
