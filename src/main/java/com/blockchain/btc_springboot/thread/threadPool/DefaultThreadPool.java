@@ -104,6 +104,7 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
 			workers.add(worker);
 			Thread thread = new Thread(worker, "ThreadPool-Worker-" + threadNum.incrementAndGet());
 			thread.start();
+			System.out.println("线程初始化完成，开始工作"+i);
 		}
 	}
 
@@ -120,7 +121,10 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
 					// 如果工作者列表是空的，那么就wait
 					while (jobs.isEmpty()) {
 						try {
+							System.out.println(jobs+"-----进入等待");
 							jobs.wait();
+							System.out.println(jobs+"-----等待结束");
+							//workers.wait();
 						} catch (InterruptedException ex) {
 							// 感知到外部对WorkerThread的中断操作，返回
 							Thread.currentThread().interrupt();
@@ -129,10 +133,13 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
 					}
 					// 取出一个Job
 					job = jobs.removeFirst();
+					System.out.println("获得工作"+job);
 				}
 				if (job != null) {
 					try {
+						System.out.println("进行工作"+job);
 						job.run();
+						System.out.println("工作完成"+job);
 					} catch (Exception ex) {
 						// 忽略Job执行中的Exception}
 					}
