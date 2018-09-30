@@ -10,7 +10,10 @@ public class Demo {
 	public static void main(String[] args) {
 		//long[] numbers = LongStream.rangeClosed(1, 20).toArray();
 		//System.out.println(JSON.toJSON(numbers));
+		boolean a = true;
+		System.out.println(a);
 	}
+
 
 }
 
