@@ -20,6 +20,11 @@ public class ForkJoinCalculator implements Calculator {
 
 		@Override
 		protected Long compute() {
+			try{
+				Thread.sleep(1000);
+			}catch (Exception e){
+
+			}
 			// 当需要计算的数字小于6时，直接计算结果
 			if (to - from < 6) {
 				long total = 0;
@@ -51,17 +56,19 @@ public class ForkJoinCalculator implements Calculator {
 	}
 
 	public static void main(String[] args) {
-		long[] numbers = LongStream.rangeClosed(20,10000).toArray();
-		long b = System.currentTimeMillis();
-		ForkJoinCalculator calculator = new ForkJoinCalculator();
-		long a = calculator.sumUp(numbers);
-		System.out.println(System.currentTimeMillis() - b);
-		System.out.println(a);
+		long[] numbers = LongStream.rangeClosed(1,10000000).toArray();
+
 
 		long c = System.currentTimeMillis();
 		ExecutorServiceCalculator calculator2 = new ExecutorServiceCalculator();
 		Long sum = calculator2.sumUp(numbers);
 		System.out.println(System.currentTimeMillis() - c);
 		System.out.println(sum);
+
+		long b = System.currentTimeMillis();
+		ForkJoinCalculator calculator = new ForkJoinCalculator();
+		long a = calculator.sumUp(numbers);
+		System.out.println(System.currentTimeMillis() - b);
+		System.out.println(a);
 	}
 }

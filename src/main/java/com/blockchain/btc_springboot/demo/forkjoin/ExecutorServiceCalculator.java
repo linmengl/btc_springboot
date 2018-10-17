@@ -45,6 +45,11 @@ public class ExecutorServiceCalculator implements Calculator {
 		// 把任务分解为 n 份，交给 n 个线程处理
 		int part = numbers.length / parallism;
 		for (int i = 0; i < parallism; i++) {
+			try{
+				Thread.sleep(1000);
+			}catch (Exception e){
+
+			}
 			int from = i * part;
 			int to = (i == parallism - 1) ? numbers.length - 1 : (i + 1) * part - 1;
 			results.add(pool.submit(new SumTask(numbers, from, to)));
