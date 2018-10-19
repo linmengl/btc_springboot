@@ -23,8 +23,7 @@ public class ConnectionPoolTest {
 		AtomicInteger get = new AtomicInteger();
 		AtomicInteger notGet = new AtomicInteger();
 		for (int i = 0; i < threadCount; i++) {
-			Thread thread = new Thread(new ConnetionRunner(count, get, notGet),
-					"ConnectionRunnerThread");
+			Thread thread = new Thread(new ConnetionRunner(count, get, notGet),	"ConnectionRunnerThread");
 			thread.start();
 		}
 		start.countDown();
