@@ -158,6 +158,13 @@
 			<version>26.0-jre</version>
 		</dependency>
 
+		<!--fiber-->
+		<dependency>
+			<groupId>co.paralleluniverse</groupId>
+			<artifactId>quasar-core</artifactId>
+			<version>0.7.10</version>
+		</dependency>
+
 	</dependencies>
 
 
