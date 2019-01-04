@@ -29,7 +29,8 @@ public class MyStack {
 		//int res = fbnq(12);
 		//System.out.println(res);
 		int[] a = {46, 30, 82, 90, 56, 17, 95, 15};
-		quick(a,0,a.length-1);
+		//quick(a,0,a.length-1);
+		quick2(a,0,a.length-1);
 		System.out.println(JSON.toJSON(a));
 
 	}
@@ -41,6 +42,34 @@ public class MyStack {
 		return fbnq(a -1)+fbnq(a-2);
 	}
 
+	public static void quick2(int[] a, int left, int right) {
+		if (right <= left) {
+			return;
+		}
+
+		int i = left;
+		int j = right;
+		int key = a[left];
+		int temp;
+
+		while (i < j) {
+			while (a[j] >= key && i < j) {
+				j--;
+			}
+			while (a[i] <= key && i < j) {
+				i++;
+			}
+			if (i < j) {
+				temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+		a[left]=a[i];
+		a[i]=key;
+		quick2(a,left,i-1);
+		quick2(a,i+1,right);
+	}
 
 	private static void quick(int[] a,int left,int right){
 		if (left >= right){
@@ -73,4 +102,6 @@ public class MyStack {
 		quick(a,0,i-1);
 		quick(a,i+1,right);
 	}
+
+
 }

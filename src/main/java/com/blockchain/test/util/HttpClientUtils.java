@@ -1,6 +1,9 @@
 package com.blockchain.test.util;
 
+import com.alibaba.fastjson.JSON;
 import com.blockchain.test.bean.HttpClientResult;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.reflect.TypeToken;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
@@ -120,6 +123,22 @@ public class HttpClientUtils {
 	 */
 	public static HttpClientResult doPost(String url) throws Exception {
 		return doPost(url, null, null);
+	}
+
+	public static void main(String[] args) {
+		String url = "http://localhost:8080/loanpf/findApplyInfo";
+		String data = "{\"appId\":\"10\",\"applyNo\":\"110\"}";
+		System.out.println(data);
+		HttpClientResult result = null;
+		//Map<String,String> map = ImmutableMap.<String,String>builder().put("data",data2).build();
+		Map<String, String> object = JSON.parseObject(data, new TypeToken<Map<String, String>>() {
+		}.getType());
+		try {
+			result = doPost(url,object);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println(result);
 	}
 
 	/**
