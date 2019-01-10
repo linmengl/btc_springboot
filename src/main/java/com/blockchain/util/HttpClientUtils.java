@@ -1,21 +1,13 @@
 package com.blockchain.util;
 
-import com.blockchain.bean.HttpClientResult;
 import com.alibaba.fastjson.JSON;
-import com.blockchain.test.bean.HttpClientResult;
-import com.google.common.collect.ImmutableMap;
+import com.blockchain.bean.HttpClientResult;
 import com.google.common.reflect.TypeToken;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.methods.*;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -24,12 +16,8 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class HttpClientUtils {
 	// 编码格式。发送编码格式统一用UTF-8
