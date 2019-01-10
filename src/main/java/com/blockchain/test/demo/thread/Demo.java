@@ -1,14 +1,11 @@
 package com.blockchain.test.demo.thread;
 
-import com.alibaba.fastjson.JSON;
-import com.blockchain.test.config.thread.ThreadPool;
+import com.blockchain.config.thread.ThreadPool;
 import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.stream.LongStream;
 
 public class Demo {
 

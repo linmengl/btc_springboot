@@ -1,6 +1,6 @@
 package com.blockchain.test;
 
-import com.blockchain.test.bean.JsonResult;
+import com.blockchain.bean.JsonResult;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
