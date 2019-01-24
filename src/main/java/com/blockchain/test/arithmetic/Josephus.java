@@ -1,4 +1,4 @@
-package com.blockchain.test;
+package com.blockchain.test.arithmetic;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Data;

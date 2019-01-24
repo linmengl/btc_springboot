@@ -1,4 +1,4 @@
-package com.blockchain.test;
+package com.blockchain.test.arithmetic;
 
 public class HanNuoTa {
 

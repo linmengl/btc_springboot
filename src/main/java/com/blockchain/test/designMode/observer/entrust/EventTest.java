@@ -1,7 +1,5 @@
 package com.blockchain.test.designMode.observer.entrust;
 
-import javafx.event.EventHandler;
-
 import java.util.Date;
 
 public class EventTest {

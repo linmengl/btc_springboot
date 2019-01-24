@@ -1,4 +1,4 @@
-package com.blockchain.test.demo.thread.cglib;
+package com.blockchain.test.agent.cglib;
 
 import net.sf.cglib.proxy.Enhancer;
 

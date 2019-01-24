@@ -1,4 +1,4 @@
-package com.blockchain.test.demo.thread.cglib;
+package com.blockchain.test.agent.cglib;
 
 /**
  * //目标对象RealSubject，cglib不需要定义目标类的统一接口

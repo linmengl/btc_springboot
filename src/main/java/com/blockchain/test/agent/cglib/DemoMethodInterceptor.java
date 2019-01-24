@@ -1,4 +1,4 @@
-package com.blockchain.test.demo.thread.cglib;
+package com.blockchain.test.agent.cglib;
 
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
@@ -13,6 +13,7 @@ public class DemoMethodInterceptor implements MethodInterceptor {
 	 * method 表示目标类方法的反射对象；
 	 * args   表示目标类方法的参数的反射对象；
 	 * methodProxy 表示代理类实例；
+	 *
 	 * @param obj
 	 * @param method
 	 * @param args
@@ -24,12 +25,12 @@ public class DemoMethodInterceptor implements MethodInterceptor {
 	public Object intercept(Object obj, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
 		System.out.println("before in cglib");
 		Object result = null;
-		try{
+		try {
 			result = methodProxy.invokeSuper(obj, args);
-		}catch (Exception e){
-			System.out.println("get ex:"+e.getMessage());
+		} catch (Exception e) {
+			System.out.println("get ex:" + e.getMessage());
 			throw e;
-		}finally {
+		} finally {
 			System.out.println("after in cglib");
 		}
 		return result;
