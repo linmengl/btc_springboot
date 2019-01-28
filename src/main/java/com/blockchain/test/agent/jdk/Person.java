@@ -1,9 +1,9 @@
-package com.blockchain.test.agent;
+package com.blockchain.test.agent.jdk;
 
 import lombok.Data;
 
 @Data
-public class Person {
+public class Person implements Animal{
 
 	private String name;
 	private int age;
@@ -18,5 +18,10 @@ public class Person {
 
 	public void hello() {
 		System.out.println("hello");
+	}
+
+	@Override
+	public void eat() {
+		System.out.println("person.......");
 	}
 }
