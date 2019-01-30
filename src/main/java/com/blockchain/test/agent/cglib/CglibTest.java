@@ -1,9 +1,11 @@
 package com.blockchain.test.agent.cglib;
 
+import net.sf.cglib.core.DebuggingClassWriter;
 import net.sf.cglib.proxy.Enhancer;
 
 public class CglibTest {
 	public static void main(String[] args){
+		System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "C:\\Users\\83982\\Desktop\\cglib\\");
 		Enhancer enhancer = new Enhancer();
 		enhancer.setSuperclass(RealSubject.class);
 		enhancer.setCallback(new DemoMethodInterceptor());

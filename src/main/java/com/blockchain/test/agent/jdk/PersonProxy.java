@@ -7,6 +7,7 @@ import java.lang.reflect.Proxy;
 public class PersonProxy {
 
 	public static void main(String[] args) {
+
 		Animal person = (Animal) Proxy.newProxyInstance(Animal.class.getClassLoader(), Person.class.getInterfaces(), new InvocationHandler() {
 			@Override
 			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
