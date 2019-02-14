@@ -9,6 +9,7 @@ public class DecoratorTest {
 
         ca.setComponent(c);
         cb.setComponent(ca);
+        ca.operation();
         cb.operation();
     }
 }

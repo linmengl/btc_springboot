@@ -64,7 +64,7 @@ public class QuickSort {
 		//System.out.println("耗时…………" + (System.currentTimeMillis() - l2) + "," + JSON.toJSON(b));
 		//maoPao(a);
 		//xuanze(a);
-		quickSort(a,0,a.length-1);
+		quickSort(a, 0, a.length - 1);
 		System.out.println(JSON.toJSON(a));
 		System.out.println(M);
 	}
@@ -99,24 +99,24 @@ public class QuickSort {
 		}
 	}
 
-	private static void quickSort(int[] a, int left, int right){
-		if (left >= right){
+	private static void quickSort(int[] a, int left, int right) {
+		if (left >= right) {
 			return;
 		}
 		int temp;
 		int key = a[left];
 		int i = left;
 		int j = right;
-		while (i < j){
+		while (i < j) {
 			M++;
-			while (a[j] >= key && i < j){
+			while (a[j] >= key && i < j) {
 				j--;
 			}
-			while (a[i] <= key && i < j){
+			while (a[i] <= key && i < j) {
 				i++;
 			}
 
-			if (i<j){
+			if (i < j) {
 				temp = a[i];
 				a[i] = a[j];
 				a[j] = temp;
@@ -125,7 +125,9 @@ public class QuickSort {
 
 		a[left] = a[i];
 		a[i] = key;
-		quickSort(a,left,i-1);
-		quickSort(a,i+1,right);
+		quickSort(a, left, i - 1);
+		quickSort(a, i + 1, right);
 	}
+
+
 }
