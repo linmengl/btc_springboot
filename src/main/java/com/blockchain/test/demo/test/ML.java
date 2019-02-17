@@ -16,6 +16,7 @@ class MLTest{
         ml.print();
 
         Meng meng = Meng.getMeng();
+
     }
 }
 
@@ -31,4 +32,6 @@ class Meng{
     public static Meng getMeng(){
         return Lin.meng;
     }
+
+
 }
