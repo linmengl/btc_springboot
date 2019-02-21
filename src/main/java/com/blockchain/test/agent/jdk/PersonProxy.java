@@ -20,3 +20,5 @@ public class PersonProxy {
 		person.eat();
 	}
 }
+
+

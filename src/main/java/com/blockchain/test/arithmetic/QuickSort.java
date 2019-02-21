@@ -69,32 +69,21 @@ public class QuickSort {
 		System.out.println(M);
 	}
 
-	private static int MP = 0;
-
-	private static void maoPao(int[] a) {
-		int temp;
-		for (int ii = 0; ii < a.length - 1; ii++) {
-			for (int i = 0; i < a.length - 1 - ii; i++) {
-				MP++;
-				if (a[i] > a[i + 1]) {
-					temp = a[i];
-					a[i] = a[i + 1];
-					a[i + 1] = temp;
-				}
-			}
-		}
-		System.out.println("maopao次数………………" + MP + "," + JSON.toJSON(a));
-	}
 
 	private static void xuanze(int[] a) {
 		int temp;
+		int min;
 		for (int x = 0; x < a.length - 1; x++) {
+			min = x;
 			for (int y = x + 1; y < a.length; y++) {
 				if (a[x] > a[y]) {
-					temp = a[x];
-					a[x] = a[y];
-					a[y] = temp;
+					min = y;
 				}
+			}
+			if (min != x){
+				temp = a[x];
+				a[x] = a[min];
+				a[min] = temp;
 			}
 		}
 	}
