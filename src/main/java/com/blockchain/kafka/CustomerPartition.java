@@ -1,4 +1,4 @@
-package com.blockchain.test.kafka.producer;
+package com.blockchain.kafka;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.kafka.clients.producer.Partitioner;

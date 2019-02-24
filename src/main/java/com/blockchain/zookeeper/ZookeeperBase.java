@@ -1,4 +1,4 @@
-package com.blockchain.test.zookeeper;
+package com.blockchain.zookeeper;
 
 import org.apache.zookeeper.*;
 

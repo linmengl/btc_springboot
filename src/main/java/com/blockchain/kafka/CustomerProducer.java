@@ -1,12 +1,9 @@
-package com.blockchain.test.kafka.producer;
+package com.blockchain.kafka;
 
-import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.clients.producer.RecordMetadata;
 
 import java.util.Properties;
 
@@ -33,7 +30,7 @@ public class CustomerProducer {
 		props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		//自定义分区 PARTITIONER_CLASS_CONFIG = "partitioner.class";
-		props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG,CustomerPartition.class);
+		props.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, CustomerPartition.class);
 
 		//创建生产者
 		Producer<String, String> producer = new KafkaProducer<>(props);
