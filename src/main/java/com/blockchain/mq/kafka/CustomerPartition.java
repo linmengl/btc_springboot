@@ -1,6 +1,5 @@
-package com.blockchain.kafka;
+package com.blockchain.mq.kafka;
 
-import com.alibaba.fastjson.JSON;
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;
 

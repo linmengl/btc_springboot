@@ -1,6 +1,4 @@
-package com.blockchain.kafka;
-
-import org.apache.kafka.clients.consumer.Consumer;
+package com.blockchain.mq.kafka;
 
 import java.util.ArrayList;
 import java.util.List;

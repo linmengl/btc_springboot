@@ -105,6 +105,35 @@
 			<version>2.1.0</version>
 			<!--<version>0.11.0.2</version>-->
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-client -->
+		<dependency>
+			<groupId>org.apache.rocketmq</groupId>
+			<artifactId>rocketmq-client</artifactId>
+			<version>4.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-common -->
+		<dependency>
+			<groupId>org.apache.rocketmq</groupId>
+			<artifactId>rocketmq-common</artifactId>
+			<version>4.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-remoting -->
+		<dependency>
+			<groupId>org.apache.rocketmq</groupId>
+			<artifactId>rocketmq-remoting</artifactId>
+			<version>4.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>4.1.32.Final</version>
+		</dependency>
+
+
+
+
 		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
