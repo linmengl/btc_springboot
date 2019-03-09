@@ -53,10 +53,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jta-atomikos</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-quartz</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-quartz</artifactId>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -68,22 +68,22 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<groupId>ch.qos.logback</groupId>-->
+					<!--<artifactId>logback-classic</artifactId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.session</groupId>-->
-			<!--<artifactId>spring-session-data-redis</artifactId>-->
-		<!--</dependency>-->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-redis</artifactId>
 			<version>1.2.5.RELEASE</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
@@ -131,28 +131,27 @@
 			<version>4.1.32.Final</version>
 		</dependency>
 
-
-
-
 		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
 			<version>2.10.4</version>
 		</dependency>
-
-
-
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
             <version>3.2.4</version>
         </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-devtools</artifactId>-->
+			<!--<scope>runtime</scope>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-test</artifactId>-->
+		<!--</dependency>-->
+
 		<!--<dependency>-->
 			<!--<groupId>mysql</groupId>-->
 			<!--<artifactId>mysql-connector-java</artifactId>-->
@@ -209,25 +208,21 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.46</version>
 		</dependency>
-
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.1.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-			<version>1.1.4</version>
-		</dependency>
-
+		<!--<dependency>-->
+			<!--<groupId>ch.qos.logback</groupId>-->
+			<!--<artifactId>logback-classic</artifactId>-->
+			<!--<version>1.1.4</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>ch.qos.logback</groupId>-->
+			<!--<artifactId>logback-core</artifactId>-->
+			<!--<version>1.1.4</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>26.0-jre</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
 		<dependency>
 			<groupId>dom4j</groupId>
@@ -241,7 +236,6 @@
 			<artifactId>quasar-core</artifactId>
 			<version>0.7.10</version>
 		</dependency>
-
 	</dependencies>
 
 
